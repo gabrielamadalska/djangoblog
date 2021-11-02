@@ -11,12 +11,16 @@
         <h3>Autor: Gabi M</h3>
     </div>
     <div>
-        <p>Akapit 1</p>
-        <em>wyróżniony tekst</em><br>
-        <strong>Pogrubiony tekst</strong><br>
-        <a href="https://www.evergreen.pl/">Sklep</a>
+        {% for post in posts %}
     </div>
-
-
+    <div>
+        {%comment%}
+        Lista postów
+        {%endcomment%}
+        <p>Opublikowany {{ post.publish_date  }}</p>
+        <h2><a href="">{{  post.title  }}</a></h2>
+        <em>{{  post.text|linebreaksbr }}</em>
+    </div>
+    {% endfor %}
 </body>
 </html>
